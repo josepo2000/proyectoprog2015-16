@@ -186,12 +186,16 @@ public class VistaNuevaPregunta extends javax.swing.JFrame {
         if(jRadioButton4.isSelected()){
             solucion4=true;
         }
+        try {
+            
         
         proyectofc1.Conexion.crearPregunta(enunciado,nombre);
         proyectofc1.Conexion.crearRespuesta(enunciado,texto1,solucion1);
         proyectofc1.Conexion.crearRespuesta(enunciado,texto2,solucion2);
         proyectofc1.Conexion.crearRespuesta(enunciado,texto3,solucion3);
         proyectofc1.Conexion.crearRespuesta(enunciado,texto4,solucion4);
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
