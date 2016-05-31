@@ -16,7 +16,7 @@ import java.util.List;
 public class Pregunta {
     private String enunciado;
     private String nombreCategoria;
-
+    
     public String getNombreCategoria() {
         return nombreCategoria;
     }

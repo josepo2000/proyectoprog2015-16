@@ -15,11 +15,17 @@ import java.util.List;
  * @author joseba
  */
 public class VistaEditarPregunta extends javax.swing.JFrame {
+    
     private static Statement sentencia;
     private static ResultSet resultado;
     private int n=0;
     private List<Pregunta> preguntas=null;
-    private
+    private List<Respuesta> respuestas=null;
+    
+    
+    public void setRespuestas(List<Respuesta> respuestas) {
+        this.respuestas = respuestas;
+    }
     public void setPreguntas(List<Pregunta> preguntas) {
         this.preguntas = preguntas;
     }
@@ -28,11 +34,13 @@ public class VistaEditarPregunta extends javax.swing.JFrame {
      */
     public VistaEditarPregunta() {
         initComponents();
-        jTextField1.setEnabled(false);
-        jTextField2.setEnabled(false);
-        jTextField3.setEnabled(false);
-        jTextField4.setEnabled(false);
-        jTextField5.setEnabled(false);
+        try {
+            respuestas=proyectofc1.Conexion.listadorespuestas(preguntas.get(0).getEnunciado());
+        } catch (Exception e) {
+        }
+        
+        
+        
     }
 
     /**

@@ -24,6 +24,7 @@ public class Conexion {
     
     private static Categoria categoria;
     private static Pregunta pregunta;
+    private static Respuesta respuesta;
 /**
  * conexion con la base de datos
  */
@@ -127,7 +128,7 @@ public class Conexion {
 
         Conexion.conectarBD();
         sentencia = Conexion.getCon().createStatement();
-        resultado = sentencia.executeQuery("select * from pregunta where NOMBRE_CATEGORIA"+nombre+";");
+        resultado = sentencia.executeQuery("select * from pregunta where NOMBRE_CATEGORIA="+nombre+";");
 
         ArrayList<Pregunta> arrayPregunta = new ArrayList<>();
 
@@ -145,7 +146,27 @@ public class Conexion {
     }
     
     
-    //DELETE FROM tabla [WHERE condición];
+   public static ArrayList<Respuesta> listadorespuestas(String enunciado) throws Exception {
+
+        Conexion.conectarBD();
+        sentencia = Conexion.getCon().createStatement();
+        resultado = sentencia.executeQuery("select * from respuesta where enunciado="+enunciado+";");
+
+        ArrayList<Respuesta> arrayRespuesta = new ArrayList<>();
+
+        while (resultado.next()) {
+
+            respuesta = new Respuesta();
+           // respuesta.setTexto(pregunta.getR().
+           // pregunta.setEnunciado(resultado.getString("enunciado"));
+           // arrayPregunta.add(pregunta);
+
+        }
+        resultado.close();
+        Conexion.cerrarBD();
+        return arrayRespuesta;
+    } 
+   
     
     
 }

@@ -16,15 +16,13 @@ public class VistaPrincipalPregunta extends javax.swing.JFrame {
     private String nombre=null;
     private List<Categoria> categorias = null;
     private List<Pregunta> preguntas=null;
-    private List<Respuesta> respuestas=null;
+    
 
     public void setPreguntas(List<Pregunta> preguntas) {
         this.preguntas = preguntas;
     }
 
-    public void setRespuestas(List<Respuesta> respuestas) {
-        this.respuestas = respuestas;
-    }
+    
     
     
     public void setNombre(String nombre) {
@@ -137,8 +135,11 @@ public void setCategorias(List<Categoria> categorias) {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       new VistaEditarPregunta().setVisible(true);
+        VistaEditarPregunta vnp=new VistaEditarPregunta();
+        vnp.setPreguntas(preguntas);
+        vnp.setVisible(true);   
         this.dispose();
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
