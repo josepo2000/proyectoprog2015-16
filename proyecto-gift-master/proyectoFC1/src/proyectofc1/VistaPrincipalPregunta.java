@@ -130,8 +130,11 @@ public void setCategorias(List<Categoria> categorias) {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        new VistaVerTodasPreguntas().setVisible(true);
-        this.dispose();
+        VistaVerTodasPreguntas venta = new VistaVerTodasPreguntas();
+                        venta.setPreguntas(preguntas);
+                        venta.setNombre(nombre);
+                        venta.setVisible(true);
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**

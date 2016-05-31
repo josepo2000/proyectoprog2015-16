@@ -132,16 +132,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        
-        
-        new VistaEditarCategoria().setVisible(true);
-        this.dispose();
-        
+ 
         VistaEditarCategoria vent = new VistaEditarCategoria();
                         vent.setCategorias(categorias);
                         vent.cargarCategoria(0);
                         vent.setVisible(true);
-        
+        this.dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -149,13 +145,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
                         ventana.setCategorias(categorias);
                         ventana.cargarCategoria(0);
                         ventana.setVisible(true);
-        
-        
-        
-        
-        
-        
-        
+     
         this.dispose();
     }//GEN-LAST:event_jButton5ActionPerformed
 

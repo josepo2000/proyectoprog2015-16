@@ -68,7 +68,7 @@ public class VistaEditarPregunta extends javax.swing.JFrame {
 
         jButton4.setText(">");
 
-        jButton5.setText("Elegir");
+        jButton5.setText("Editar");
 
         jButton6.setText("Borrar");
 

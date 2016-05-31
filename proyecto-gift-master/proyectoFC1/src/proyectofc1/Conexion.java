@@ -143,4 +143,9 @@ public class Conexion {
         Conexion.cerrarBD();
         return arrayPregunta;
     }
+    
+    
+    
+    
+    
 }

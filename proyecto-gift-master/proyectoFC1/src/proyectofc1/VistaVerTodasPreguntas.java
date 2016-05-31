@@ -6,17 +6,38 @@
 
 package proyectofc1;
 
+import java.util.List;
+
 /**
  *
  * @author joseba
  */
 public class VistaVerTodasPreguntas extends javax.swing.JFrame {
+private List<Pregunta> preguntas = null;
+private String nombre=null;
+
+    public void setPreguntas(List<Pregunta> preguntas) {
+        this.preguntas = preguntas;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+
 
     /**
      * Creates new form VistaVerTodasPreguntas
      */
     public VistaVerTodasPreguntas() {
         initComponents();
+        for (int i = 0; i < preguntas.size(); i++) {
+            
+        jTextArea1.append(preguntas.get(i).getEnunciado());
+        jTextArea1.append(System.getProperty("line.separator")); 
+        
+        }
+        
     }
 
     /**

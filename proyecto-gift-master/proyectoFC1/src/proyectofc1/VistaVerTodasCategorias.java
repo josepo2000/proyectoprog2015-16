@@ -29,6 +29,21 @@ public class VistaVerTodasCategorias extends javax.swing.JFrame {
     
     public VistaVerTodasCategorias() {
         initComponents();
+        
+        
+        for (int i = 0; i < categorias.size(); i++) {
+            
+             jTextArea1.append(categorias.get(i).getNombre());
+        jTextArea1.append(System.getProperty("line.separator")); 
+        jTextArea1.append(categorias.get(i).getTipo());    
+        jTextArea1.append(System.getProperty("line.separator")); 
+        }
+        
+       
+        
+        
+        
+        
     }
 
     /**
