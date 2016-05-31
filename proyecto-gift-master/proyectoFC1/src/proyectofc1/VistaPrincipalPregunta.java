@@ -16,6 +16,17 @@ public class VistaPrincipalPregunta extends javax.swing.JFrame {
     private String nombre=null;
     private List<Categoria> categorias = null;
     private List<Pregunta> preguntas=null;
+    private List<Respuesta> respuestas=null;
+
+    public void setPreguntas(List<Pregunta> preguntas) {
+        this.preguntas = preguntas;
+    }
+
+    public void setRespuestas(List<Respuesta> respuestas) {
+        this.respuestas = respuestas;
+    }
+    
+    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -30,6 +41,7 @@ public void setCategorias(List<Categoria> categorias) {
         initComponents();
          try {
             preguntas=proyectofc1.Conexion.listadopreguntas(nombre);
+            
         } catch (Exception e) {
         }
     }

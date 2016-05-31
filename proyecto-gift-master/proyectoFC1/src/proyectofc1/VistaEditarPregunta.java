@@ -8,14 +8,21 @@ package proyectofc1;
 
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.List;
 
 /**
  *
  * @author joseba
  */
 public class VistaEditarPregunta extends javax.swing.JFrame {
-private static Statement sentencia;
+    private static Statement sentencia;
     private static ResultSet resultado;
+    private int n=0;
+    private List<Pregunta> preguntas=null;
+    private
+    public void setPreguntas(List<Pregunta> preguntas) {
+        this.preguntas = preguntas;
+    }
     /**
      * Creates new form VistaEditarPregunta
      */
@@ -59,6 +66,11 @@ private static Statement sentencia;
         jLabel1.setText("Enunciado:");
 
         jButton1.setText("<");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Atras");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -71,8 +83,18 @@ private static Statement sentencia;
         jButton3.setEnabled(false);
 
         jButton4.setText(">");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Editar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Borrar");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -185,6 +207,52 @@ private static Statement sentencia;
           } catch (Exception e) {
         }
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    
+    public void cargarPreguntas(int n) {
+        jTextField1.setText(preguntas.get(n).getEnunciado());
+        jTextField2.setText(preguntas.get(n).);
+        jTextField2.setText(preguntas.get(n).);
+        jTextField2.setText(preguntas.get(n).);
+        jTextField2.setText(preguntas.get(n).);
+        if () {
+            jRadioButton1.setSelected();
+        }
+        if(){
+             jRadioButton2.setSelected();
+        }
+        if(){
+             jRadioButton3.setSelected();
+        }
+        if(){
+             jRadioButton4.setSelected();
+        }
+    }
+    
+    
+    
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        
+        if (n < preguntas.size() - 1) {
+            n++;
+
+            cargarPreguntas(n);
+        }
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+          if (n > 0) {
+            n=n-1;
+
+            cargarpreguntas(n);
+       }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
