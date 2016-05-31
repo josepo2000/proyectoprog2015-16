@@ -23,6 +23,7 @@ public class Conexion {
     private static ResultSet resultado;
     
     private static Categoria categoria;
+    private static Pregunta pregunta;
 /**
  * conexion con la base de datos
  */
@@ -122,5 +123,24 @@ public class Conexion {
         Conexion.cerrarBD();
         return arrayCategoria;
     }
-    
+    public static ArrayList<Pregunta> listadopreguntas(String nombre) throws Exception {
+
+        Conexion.conectarBD();
+        sentencia = Conexion.getCon().createStatement();
+        resultado = sentencia.executeQuery("select * from pregunta where NOMBRE_CATEGORIA"+nombre+";");
+
+        ArrayList<Pregunta> arrayPregunta = new ArrayList<>();
+
+        while (resultado.next()) {
+
+            pregunta = new Pregunta();
+            pregunta.setNombreCategoria(resultado.getString("nombre_categoria"));
+            pregunta.setEnunciado(resultado.getString("enunciado"));
+            arrayPregunta.add(pregunta);
+
+        }
+        resultado.close();
+        Conexion.cerrarBD();
+        return arrayPregunta;
+    }
 }

@@ -6,6 +6,8 @@
 
 package proyectofc1;
 
+import java.util.List;
+
 /**
  *
  * @author joseba
@@ -15,6 +17,16 @@ public class VistaVerTodasCategorias extends javax.swing.JFrame {
     /**
      * Creates new form VistaVerTodasClases
      */
+    
+    private List<Categoria> categorias = null;
+    
+    public void setCategorias(List<Categoria> categorias) {
+        this.categorias = categorias;
+    }
+
+    
+    
+    
     public VistaVerTodasCategorias() {
         initComponents();
     }

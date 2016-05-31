@@ -6,12 +6,26 @@
 
 package proyectofc1;
 
+import java.util.List;
+
 /**
  *
  * @author joseba
  */
 public class VistaNuevaPregunta extends javax.swing.JFrame {
+    private List<Pregunta> preguntas = null;
+    private String nombre=null;
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    public void setPreguntas(List<Pregunta> preguntas) {
+        this.preguntas = preguntas;
+    }
+    
+    
+    
     /**
      * Creates new form VistaNuevaPregunta
      */
@@ -225,6 +239,12 @@ public class VistaNuevaPregunta extends javax.swing.JFrame {
         }
         //</editor-fold>
 
+       
+        
+        
+        
+        
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

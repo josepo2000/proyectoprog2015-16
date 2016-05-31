@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,7 +16,7 @@ import java.util.List;
  */
 public class VistaPrincipal extends javax.swing.JFrame {
     
-    private    ArrayList<Categoria> categorias = new ArrayList<>();
+    private ArrayList<Categoria> categorias = new ArrayList<>();
     
           
     /**
@@ -123,10 +124,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
       
-        new VistaNuevaCategoria().setVisible(true);
+        VistaNuevaCategoria vnc=new VistaNuevaCategoria();
+        vnc.setCategorias(categorias);
+        vnc.setVisible(true);   
         this.dispose();
-        
-        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -136,7 +137,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
         new VistaEditarCategoria().setVisible(true);
         this.dispose();
         
-        
+        VistaEditarCategoria vent = new VistaEditarCategoria();
+                        vent.setCategorias(categorias);
+                        vent.cargarCategoria(0);
+                        vent.setVisible(true);
         
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -156,7 +160,17 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-      new VistaVerTodasCategorias().setVisible(true);
+      
+         VistaVerTodasCategorias venta = new VistaVerTodasCategorias();
+                        venta.setCategorias(categorias);
+                        venta.setVisible(true);
+        
+        
+        
+        
+        
+        
+        
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 

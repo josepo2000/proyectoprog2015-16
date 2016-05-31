@@ -6,17 +6,32 @@
 
 package proyectofc1;
 
+import java.util.List;
+
 /**
  *
  * @author joseba
  */
 public class VistaPrincipalPregunta extends javax.swing.JFrame {
-
+    private String nombre=null;
+    private List<Categoria> categorias = null;
+    private List<Pregunta> preguntas=null;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
+public void setCategorias(List<Categoria> categorias) {
+        this.categorias = categorias;
+    }
     /**
      * Creates new form VistaPrincipalPregunta
      */
     public VistaPrincipalPregunta() {
         initComponents();
+         try {
+            preguntas=proyectofc1.Conexion.listadopreguntas(nombre);
+        } catch (Exception e) {
+        }
     }
 
     /**
@@ -100,9 +115,11 @@ public class VistaPrincipalPregunta extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        new VistaNuevaPregunta().setVisible(true);
+         VistaNuevaPregunta vnp=new VistaNuevaPregunta();
+        vnp.setPreguntas(preguntas);
+        vnp.setNombre(nombre);
+        vnp.setVisible(true);   
         this.dispose();
-        
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -143,7 +160,8 @@ public class VistaPrincipalPregunta extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(VistaPrincipalPregunta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+       
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {

@@ -22,7 +22,9 @@ public class VistaNuevaCategoria extends javax.swing.JFrame {
      */
      private List<Categoria> categorias = null;
     
-    
+     public void setCategorias(List<Categoria> categorias) {
+        this.categorias = categorias;
+    }
     public VistaNuevaCategoria() {
         initComponents();
     }

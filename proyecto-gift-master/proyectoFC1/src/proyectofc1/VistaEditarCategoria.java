@@ -19,6 +19,13 @@ public class VistaEditarCategoria extends javax.swing.JFrame {
      */
     private List<Categoria> categorias = null;
     private int n=0;
+    
+    public void setCategorias(List<Categoria> categorias) {
+        this.categorias = categorias;
+    }
+    
+    
+    
     public VistaEditarCategoria() {
         initComponents();
     }

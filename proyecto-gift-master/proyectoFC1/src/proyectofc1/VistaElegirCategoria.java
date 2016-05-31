@@ -167,6 +167,14 @@ public class VistaElegirCategoria extends javax.swing.JFrame {
   
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
+        VistaPrincipalPregunta vent=new VistaPrincipalPregunta();
+        vent.setCategorias(categorias);
+        String nombre=jTextField1.getText();
+        vent.setNombre(nombre);
+        vent.setVisible(true);   
+        this.dispose();
+        
+        
        /* if (true) {
               new VistaPrincipalPregunta().setVisible(true);
              ventana.setcategorias(categoria);

@@ -15,7 +15,15 @@ import java.util.List;
  */
 public class Pregunta {
     private String enunciado;
-    
+    private String nombreCategoria;
+
+    public String getNombreCategoria() {
+        return nombreCategoria;
+    }
+
+    public void setNombreCategoria(String nombreCategoria) {
+        this.nombreCategoria = nombreCategoria;
+    }
     
    private List<Respuesta> r=new ArrayList<>();
 
