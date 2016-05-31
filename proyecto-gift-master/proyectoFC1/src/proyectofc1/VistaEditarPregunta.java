@@ -6,12 +6,16 @@
 
 package proyectofc1;
 
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 /**
  *
  * @author joseba
  */
 public class VistaEditarPregunta extends javax.swing.JFrame {
-
+private static Statement sentencia;
+    private static ResultSet resultado;
     /**
      * Creates new form VistaEditarPregunta
      */
@@ -71,6 +75,11 @@ public class VistaEditarPregunta extends javax.swing.JFrame {
         jButton5.setText("Editar");
 
         jButton6.setText("Borrar");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -162,6 +171,20 @@ public class VistaEditarPregunta extends javax.swing.JFrame {
           new VistaPrincipalPregunta().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+          String enunciado=jTextField1.getText();
+        try {
+            
+      
+        Conexion.conectarBD();
+        sentencia = Conexion.getCon().createStatement();
+        resultado = sentencia.executeQuery("delete from pregunta where "+enunciado+";");
+        Conexion.getCon().commit();
+        Conexion.cerrarBD();
+          } catch (Exception e) {
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
 
     /**
      * @param args the command line arguments

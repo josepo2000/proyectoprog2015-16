@@ -6,6 +6,8 @@
 
 package proyectofc1;
 
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.List;
 
 /**
@@ -13,13 +15,14 @@ import java.util.List;
  * @author joseba
  */
 public class VistaEditarCategoria extends javax.swing.JFrame {
-
+        
     /**
      * Creates new form VistaEditarCategoria
      */
     private List<Categoria> categorias = null;
     private int n=0;
-    
+    private static Statement sentencia;
+    private static ResultSet resultado;
     public void setCategorias(List<Categoria> categorias) {
         this.categorias = categorias;
     }
@@ -192,7 +195,17 @@ public void cargarCategoria(int n) {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
        //borrar datos
-        
+        String nombre=jTextField1.getText();
+        try {
+            
+      
+        Conexion.conectarBD();
+        sentencia = Conexion.getCon().createStatement();
+        resultado = sentencia.executeQuery("delete from categoria where "+nombre+";");
+        Conexion.getCon().commit();
+        Conexion.cerrarBD();
+          } catch (Exception e) {
+        }
         //con la conexion establecida borrar los datos
         
         

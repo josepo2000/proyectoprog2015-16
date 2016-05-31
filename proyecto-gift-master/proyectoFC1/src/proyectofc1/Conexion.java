@@ -145,7 +145,7 @@ public class Conexion {
     }
     
     
-    
+    //DELETE FROM tabla [WHERE condición];
     
     
 }
